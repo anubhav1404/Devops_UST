@@ -1,5 +1,8 @@
 for pre-commit hook
 go to .git->hooks-> remove extenxtion .smaple from pre-commit.sample
+or
+touch  pre-commit
+chmod +x pre-commit
 
 this will help in trailing white spacing  
 
@@ -10,3 +13,64 @@ main.py:1: trailing whitespace.
 main.py:2: trailing whitespace.
 +
 main.py:1: new blank line at EOF.
+
+
+In Git, the term "upstream" refers to the main branch from which a given branch was branched off of and to which it may eventually push changes to. By default, Git uses "origin" as the remote name for the upstream repository, but you can configure this to any name.
+
+What is a Pull Request?
+It allows others to review your code before it gets merged into the main branch.
+
+Using Git for Code Review
+# See changes in working directory
+git diff
+
+# See staged changes
+git diff --cached
+
+# Compare two branches
+git diff main feature-branch
+
+# See changes in specific file
+git diff main feature-branch -- filename.js
+
+# Show word-level changes
+git diff --word-diff
+
+# Show statistics
+git diff --stat
+
+# Ignore whitespace changes
+git diff -w
+
+# Show only file names
+git diff --name-only
+
+
+View commit history:# Basic log
+git log
+
+git log --oneline -> # One line per commit
+
+
+# Show graph
+git log --graph --oneline
+
+# Show changes in each commit
+git log -p
+
+# Show specific file history
+git log -- filename.js
+
+
+
+Use merge:
+
+In team workflows to keep all contributors' history
+
+When commit authorship and context are important
+
+Use rebase:
+
+Before pushing (especially solo work) to clean up
+
+When you want a tidy, linear Git history
