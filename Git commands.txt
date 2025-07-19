@@ -1,0 +1,67 @@
+git config --global user.name "Your Name"  --->Set your name for all your Git commits.
+
+git config --global user.email "you@example.com" ---> Set your email for all your Git commits.
+
+git init ---->Start a new Git repo in your current folder.
+
+git clone <repo-url>   ---->  Copy an existing remote repo to your local system.
+
+git status  --->Check what’s changed, staged, or untracked.
+
+git add <file> or git add .  ------>  Stage one file or everything for commit.
+
+git commit -m "Your message"  ---->Save the staged snapshot with a message.
+
+git commit -am "Your message" -----> Stage and commit tracked files in one step (skips add).
+
+git log  ---> Show full commit history (most recent on top).
+
+git log --oneline   ---->Compact view: one commit per line.
+
+git show <commit-id>    -----> See details and changes of a specific commit.
+
+git branch   ---->List all local branches.
+
+git branch <branch-name>   ----->Create a new branch.
+
+git checkout <branch-name>   ----->Switch to another branch.
+
+git checkout -b <branch-name>  --->Create and switch to a new branch.
+
+git merge <branch-name> ----->Merge the given branch into your current one.
+
+Conflict Handling
+Git will mark conflicting areas in files after merge.
+
+Manually fix the conflicts, then:
+
+git add <file>
+
+git commit
+
+
+git restore <file>    ------> Discard changes in working directory (safe undo).
+
+git restore --staged <file>     -------> Unstage a file without discarding changes.
+
+git reset --hard <commit-id>  ------> Go back to a previous commit ( destroys changes).
+
+git revert <commit-id> ----->Safely undo a commit by creating a new one.
+
+Remote Repos
+git remote -v ------>See your remote repo connections (e.g., origin).
+
+git push origin <branch>   ------->Upload commits to a remote branch.
+
+git pull origin <branch>  ------>Download and merge from a remote branch.
+
+git fetch     ----->Download changes but don’t merge yet.
+
+.gitignore  ----->Add patterns for files you don’t want Git to track (e.g., *.log, node_modules/).
+
+
+git diff  ----> See changes between working directory and index.
+
+git tag <tag-name> ---->Mark a specific point in history (useful for releases).
+
+git blame <file> ---->Show who last modified each line of a file.

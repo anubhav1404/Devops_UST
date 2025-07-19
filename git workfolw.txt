@@ -1,0 +1,12 @@
+for pre-commit hook
+go to .git->hooks-> remove extenxtion .smaple from pre-commit.sample
+
+this will help in trailing white spacing  
+
+
+$ git commit -m "first commit"
+main.py:1: trailing whitespace.
++        
+main.py:2: trailing whitespace.
++
+main.py:1: new blank line at EOF.
