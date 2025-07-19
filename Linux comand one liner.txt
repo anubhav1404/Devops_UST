@@ -1,0 +1,122 @@
+------------------------------------
+System Navigation & File Management
+------------------------------------
+ls – Lists the files and folders in the current directory.
+
+cd – Changes the current directory.
+
+pwd – Shows the full path of where you currently are.
+
+mkdir – Creates a new directory (folder).
+
+rm – Deletes files or directories (careful with this one!).
+
+cp – Copies files or directories from one place to another.
+
+mv – Moves or renames files and directories.
+
+touch – Creates a new empty file.
+
+find – Searches for files and directories across the filesystem.
+
+locate – Quickly finds files using a pre-built index.
+---------------------
+File Viewing & Editing
+---------------------
+cat – Displays the contents of a file.
+
+less – Opens a file for scrolling and reading (great for long files).
+
+head – Shows the first few lines of a file.
+
+tail – Shows the last few lines of a file.
+
+nano – A simple, beginner-friendly text editor.
+
+vim – A powerful, keyboard-driven text editor for pros.
+
+grep – Searches for text within files.
+
+---------------------------------
+📦 Package & Software Management
+---------------------------------
+apt – Manages packages on Debian-based systems (like Ubuntu).
+
+yum – Manages packages on RHEL-based systems.
+
+dnf – The modern replacement for yum (used in Fedora).
+
+pacman – Package manager for Arch Linux.
+
+snap – Installs and manages Snap packages.
+--------------------------------
+User & Permission Management
+--------------------------------
+whoami – Shows your current username.
+
+id – Displays user and group IDs.
+
+chmod – Changes file permissions.
+
+chown – Changes file ownership.
+
+sudo – Runs commands with admin (superuser) privileges.
+
+adduser – Adds a new user to the system.
+
+passwd – Changes a user’s password.
+--------------------------------------
+System Monitoring & Process Management
+--------------------------------------
+top – Live view of system processes and resource usage.
+
+htop – A better version of top with colors and navigation.
+
+ps – Shows running processes.
+
+kill – Stops a process using its PID.
+
+df – Shows disk space usage.
+
+du – Shows space used by files and directories.
+
+free – Displays available memory and swap space.
+
+uptime – Tells how long the system has been running.
+
+-----------
+Networking
+-----------
+ping – Tests connectivity to another system or website.
+
+curl – Fetches content from a URL.
+
+wget – Downloads files from the web.
+
+ifconfig – Shows or configures network interfaces (older).
+
+ip – The modern replacement for ifconfig.
+
+netstat – Displays network connections and stats.
+
+ss – A faster alternative to netstat.
+----------------------
+Utilities & Shortcuts
+----------------------
+man – Opens the manual for a command (useful for learning).
+
+history – Lists previously run commands.
+
+alias – Creates shortcuts for longer commands.
+
+clear – Clears the terminal screen.
+
+echo – Displays a message or variable.
+
+date – Shows the current date and time.
+
+sleep – Pauses for a specified time (seconds).
+
+tar – Archives or extracts files (used with .tar.gz, etc.).
+
+zip / unzip – Compresses or extracts .zip files.
