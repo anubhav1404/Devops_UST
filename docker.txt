@@ -1,0 +1,127 @@
+type 1 hypervisor -> no under lying os 
+docker enhine 
+CLI ,
+API,
+DOCKER Daemon
+
+root@ip-172-31-9-203:/home/ubuntu#  docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+3da95a905ed5: Pull complete
+037111f539a0: Pull complete
+1e537b66692c: Pull complete
+d3618cedc15e: Pull complete
+63b1ad245775: Pull complete
+40c013bb3d47: Pull complete
+ec5daaed1d0a: Pull complete
+Digest: sha256:f5c017fb33c6db484545793ffb67db51cdd7daebee472104612f73a85063f889
+Status: Downloaded newer image for nginx:latest
+f55dbce5b5622be79bcc1260ac8a7582868e16d87b9c1b02ce792710edff0e74
+
+Run 'docker run --help' for more information
+root@ip-172-31-9-203:/home/ubuntu# docker stop some-nginx
+some-nginx
+root@ip-172-31-9-203:/home/ubuntu# docker rm some-nginx
+some-nginx
+root@ip-172-31-9-203:/home/ubuntu# docker run --name some-nginx -d -p 8080:80 nginx
+d7af7aafad00492445703ab653239cf82ac5778a5b43b754e3e203c5a0d89de0
+root@ip-172-31-9-203:/home/ubuntu# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+nginx         latest    22bd15417453   5 days ago     192MB
+hello-world   latest    74cc54e27dc4   5 months ago   10.1kB
+root@ip-172-31-9-203:/home/ubuntu# curl ifconfig.me
+
+
+
+inorder to remove a image by using docker rmi <imagemname> 
+firstly we need to do the following things :
+1. stop the container by using docker stop <container id>
+2. remove the container by using docker rm <container id>
+3. Now remove the image by docker rmi <image name >
+
+
+
+option 2 (not recommended )docker rmi -f ubuntu/nginx
+
+Dockerfile:-
+tells Docker how to build your application into a container
+1.	FROM - Choose your base image        # This is like choosing the foundation for your house FROM python:3.11-slim
+   FROM node:18
+
+2. WORKDIR - Set your working directory
+WORKDIR /app
+# This is like saying "work in this folder"
+
+3. COPY - Copy files from your computer to the container
+COPY requirements.txt .     # First line copies just the requirements file
+COPY . .    # Second line copies everything else
+NOTE THAT PUTTING . IS ESSENTIAL HERE
+
+4. RUN - Execute commands during the build
+RUN pip install -r requirements.txt
+# This installs your Python packages
+
+5. EXPOSE - Tell Docker which port your app uses
+EXPOSE 8000   # Your app will be available on port 8000
+
+6. CMD - What command to run when the container starts
+CMD ["python", "app.py"]
+# This starts your application
+
+ephemeral storage - it's temporary and not persistent. major issue with docker container
+
+Create a volume :
+
+Step 1: Create a Volume
+
+docker volume create myvolume
+docker volume ls
+
+Step 2: Use Volume in a Container
+
+docker run -d --name mycontainer -v myvolume:/app/data nginx
+
+Step 3: Verify Volume Mount
+
+docker inspect mycontainer
+
+ Step 4: Remove a Volume (optional)
+
+docker volume rm myvolume
+
+docker volume prune
+
+
+to remove volume
+first stop volume_id
+rm vol vol_id
+docker volume rm vol1
+
+
+
+
+
+BRIDGE NETWORK
+# Create custom network
+docker network create my_network
+
+# Run containers on custom network
+docker run -d --name app1 --network my_network nginx
+docker run -d --name app2 --network my_network nginx
+
+
+
+List networks:
+docker network ls
+
+Create network:
+docker network create my_network
+
+Inspect network:
+docker network inspect my_network
+
+Connect container to network:
+docker network connect my_network my_container
+
+Disconnect container from network:
+docker network disconnect my_network my_container
