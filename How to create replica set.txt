@@ -1,0 +1,7 @@
+# Delete deployments
+kubectl delete deployment postgres-deployment
+kubectl delete deployment web-app-deployment
+
+# Delete services
+kubectl delete service postgres-service
+kubectl delete service web-app-service
