@@ -29,7 +29,8 @@ nano index.html
 
 nano Dockerfile
 FROM nginx:alpine
-COPY index.html /usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html/index.html   ------------------>  (/usr/share/nginx/html/)?   That path is documented because: It’s the default document root used by the official nginx Docker image.
+So when you build your own image based on nginx, you can copy files to that path to serve them via HTTP.
 
 docker build -t yourdockerhubusername/myhtmlapp:v1 .
 
