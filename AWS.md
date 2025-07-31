@@ -9,7 +9,7 @@ aws ec2 create-vpc \
 aws ec2 modify-vpc-attribute \
     --vpc-id vpc-12345678 \
     --enable-dns-hostnames
-
+# Create Public Subnet
 aws ec2 create-subnet \
     --vpc-id vpc-0f9f9a149c7448994 \
     --cidr-block 10.0.1.0/24 \
