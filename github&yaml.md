@@ -103,7 +103,31 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     branches: [main]
-```  
+```
+## Understanding `pull_request` Types in GitHub Actions
+
+In GitHub Actions, you can specify which types of pull request events should trigger your workflow using the `types` field under the `pull_request` event.
+
+### 🔹 `opened`
+- Triggered when a **new pull request is created**.
+- **Example:** A developer creates a PR to merge their `feature` branch into `main`.
+- **Use Case:** Run CI checks or code review bots when a new PR is submitted.
+
+---
+
+### 🔹 `synchronize`
+- Triggered when the **PR branch is updated**.
+- Happens when:
+  - New commits are pushed to the PR source branch
+  - The branch is rebased or force-pushed
+- **Use Case:** Automatically re-run tests when the contributor makes changes.
+
+---
+
+### 🔹 `reopened`
+- Triggered when a previously **closed PR is reopened**.
+- Works whether the PR was merged or simply closed.
+- **Use Case:** Re-validate or re-t
 Workflow runs when a PR to `main` is opened, updated, or reopened.
 
 ### Scheduled (Cron) Jobs
