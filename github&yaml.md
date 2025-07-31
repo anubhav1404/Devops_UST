@@ -124,39 +124,10 @@ In GitHub Actions, you can specify which types of pull request events should tri
 - **Use Case:** Re-validate or re-t
 Workflow runs when a PR to `main` is opened, updated, or reopened.
 
-### Scheduled (Cron) Jobs
 
-```yaml
-on:
-  schedule:
-    - cron: '30 2 * * *'   # every day at 02:30 UTC
-    - cron: '0 9 * * 1'    # every Monday at 09:00 UTC
-```
-
-### Manual Dispatch
-
-```yaml
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Where to deploy'
-        required: true
-        type: choice
-        options: [staging, production]
-```
 You can trigger this via the **Actions** tab in GitHub UI.
 
-### Multiple Triggers
 
-```yaml
-on:
-  push: {}
-  pull_request: {}
-  schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch: {}
-```
 
 ### Release Events
 
