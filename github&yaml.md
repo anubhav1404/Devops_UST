@@ -1,10 +1,4 @@
----
-# YAML & GitHub Actions Workshop Notes
 
-*Date: 2025-07-25*  
-*Tags: `devops`, `ust`, `github`, `cicd`*
-
----
 
 # Part 1: YAML Refresher
 
