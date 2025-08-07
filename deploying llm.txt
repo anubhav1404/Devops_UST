@@ -1,0 +1,63 @@
+Create a folder llm-api:
+
+mkdir llm-api && cd llm-api
+
+
+app.py
+from fastapi import FastAPI
+from pydantic import BaseModel
+from transformers import pipeline
+
+app = FastAPI()
+classifier = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
+
+class InputText(BaseModel):
+    text: str
+
+@app.get("/")
+def home():
+    return {"message": "LLM API is live!"}
+
+@app.post("/predict")
+def predict(data: InputText):
+    return classifier(data.text)
+
+
+requiremnts.txt
+fastapi
+uvicorn
+transformers
+torch
+
+
+Dockerfile
+
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app.py .
+
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000"]
+
+
+
+
+docker build -t anubhav1404/llm-api:latest .
+
+docker login
+docker push anubhav1404/llm-api:latest
+
+connect ec2 to eks
+aws configure
+
+
+aws eks update-kubeconfig --region us-east-1 --name anubahv-eks
+
+curl http://<EXTERNAL-IP>/
+
+
+
